@@ -1,51 +1,27 @@
-import React, { useState } from 'react';
-import home from'./home.css';
+//*** fichier App.js ***
+
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import App from './about/about'
-import About from './about/about';
-import App from './componenrts/Layout/Layout';
-import Layout from './layout/layout';
+import Layout from './Layout/Layout';
+import Home from '.components/Home/Home';
+import About from './About/About';
+import Search from './Search/Search';
+import List from './List/List';
 
-
-function Home() {
-  const [animation, setAnimation] = useState(true);
-
-  const toggleAnimation = () => {
-    console.log(animation);
-    setAnimation((animation) => !animation);
-  };
+function App() {
 
   return (
-    <div className="container App-header App" >
-      <img
-        src="../images/dwwm_1.png"
-        className={`logo ${animation && "rotate"}`}
-        alt="logo"
-      />
-      <h1>TP React Développeur Web et Web Mob</h1>
-      <button className="App-button" onClick={toggleAnimation}>
-        Modifier l'animation
-      </button>
+    <div className="App">
       <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route index element={<Home />} />
-        <Route path="/about" element={<About/>}/>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/about/:data" element={<About />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/list/:data" element={<List />} />
+        </Route>
       </Routes>
     </div>
   );
 }
 
-function App() {
-  return (
-    <>
-      <Home />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </>
-  );
-}
-
-
-export default Home;
+export default App;

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import './List.css';
-import Film from './Film/Film.js';
+import Film from './Film/Film';
 import '../../TMDBApi.js';
 import { getFilmsFromApiWithSearchedText } from '../../TMDBApi.js';
 
