@@ -2,8 +2,8 @@
 
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Layout from './Layout/Layout';
-import Home from '.components/Home/Home';
+import Layout from './layout/Layout';
+import Home from './Home/Home';
 import About from './About/About';
 import Search from './Search/Search';
 import List from './List/List';
